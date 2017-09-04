@@ -3,7 +3,7 @@ import { Product } from '../product.model';
 
 
 @Component({
-  selector: 'app-product-row',
+  selector: 'product-row',
   templateUrl: './product-row.component.html'
 })
 export class ProductRowComponent {
