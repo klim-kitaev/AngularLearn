@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import {
@@ -16,6 +16,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarItemComponent } from './sidebar/sidebar-item.component';
 
 import { ExampleDef } from './example.model';
+import { DemoFormSkuWithBuilderComponent } from './demo-form-sku-with-builder/demo-form-sku-with-builder.component';
 
 /*
  * Here's the master list of our examples for this chapter.
@@ -23,7 +24,7 @@ import { ExampleDef } from './example.model';
 export const examples: ExampleDef[] = [
    {label: 'Intro', name: 'Root', path: '', component: IntroComponent},
    {label: 'Sku', name: 'DemoFormSku', path: 'sku', component: DemoFormSkuComponent},
-//   {label: 'Sku (with Builder)', name: 'DemoFormSkuWithBuilder', path: 'sku-builder', component: DemoFormSkuWithBuilderComponent},
+   {label: 'Sku (with Builder)', name: 'DemoFormSkuWithBuilder', path: 'sku-builder', component: DemoFormSkuWithBuilderComponent},
 //   {label: 'Validation Explicit', name: 'DemoFormValidationsExplicit', path: 'validations-explicit', component: DemoFormWithValidationsExplicitComponent},
  //  {label: 'Validation Shorthand', name: 'DemoFormValidationsShorthand', path: 'validations-shorthand', component: DemoFormWithValidationsShorthandComponent},
  //  {label: 'Custom Validation', name: 'DemoFormWithCustomValidation', path: 'custom-validation', component: DemoFormWithCustomValidationComponent},
@@ -34,7 +35,7 @@ export const examples: ExampleDef[] = [
 const routes: Routes = [
   { path: '', component: IntroComponent, pathMatch: 'full' },
   { path: 'sku', component: DemoFormSkuComponent, pathMatch: 'full' },
-//  { path: 'sku-builder', component: DemoFormSkuWithBuilderComponent, pathMatch: 'full' },
+  { path: 'sku-builder', component: DemoFormSkuWithBuilderComponent, pathMatch: 'full' },
 //  { path: 'validations-explicit', component: DemoFormWithValidationsExplicitComponent, pathMatch: 'full'},
 //  { path: 'validations-shorthand', component: DemoFormWithValidationsShorthandComponent, pathMatch: 'full'},
 //  { path: 'custom-validation', component: DemoFormWithCustomValidationComponent, pathMatch: 'full'},
@@ -48,11 +49,13 @@ const routes: Routes = [
     IntroComponent,
     SidebarComponent,
     SidebarItemComponent,
-    DemoFormSkuComponent    
+    DemoFormSkuComponent,
+    DemoFormSkuWithBuilderComponent    
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes)
   ],
