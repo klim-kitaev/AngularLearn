@@ -12,6 +12,8 @@ import {
 import { AppComponent } from './app.component';
 import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
 import { IntroComponent } from './intro/intro.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarItemComponent } from './sidebar/sidebar-item.component';
 
 import { ExampleDef } from './example.model';
 
@@ -44,7 +46,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     IntroComponent,
-    DemoFormSkuComponent
+    SidebarComponent,
+    SidebarItemComponent,
+    DemoFormSkuComponent    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [{ provide: 'ExampleDefs',    useValue: examples }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

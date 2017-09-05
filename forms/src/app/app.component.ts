@@ -7,6 +7,7 @@ import { ExampleDef } from './example.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   constructor(
     private router:Router,
